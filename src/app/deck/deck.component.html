@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="card-area">
+    <div class="card-search">
+      <input type="text" [(ngModel)]="filtro" placeholder="Pesquisar..." class="search-box" />
+    </div>
+    <div class="card-container">
+      <app-card *ngFor="let item of dadosFiltrados" (click)="cardSelected(item)"
+                Name="{{item.Name}}"
+                Description="{{item.Description}}"
+                Image="{{item.Image}}"
+                Level="{{item.Level}}"
+                Attack="{{item.Attack}}"
+                Defense="{{item.Defense}}"
+                Magic="{{item.Magic}}"
+                MagicResist="{{item.MagicResist}}"
+                HealthPoint="{{item.HealthPoint}}">
+
+      </app-card>
+    </div>
+  </div>
+  <div class="card-view" *ngIf="cardSelect">
+    <div class="card-view-functions">
+      <button class="fechar" (click)="fecharPainel()">✕</button>
+    </div>
+    <div class="card-view-detail">
+      <app-card Name="{{cardSelect.Name}}"
+                Description="{{cardSelect.Description}}"
+                Image="{{cardSelect.Image}}"
+                Level="{{cardSelect.Level}}"
+                Attack="{{cardSelect.Attack}}"
+                Defense="{{cardSelect.Defense}}"
+                Magic="{{cardSelect.Magic}}"
+                MagicResist="{{cardSelect.MagicResist}}"
+                HealthPoint="{{cardSelect.HealthPoint}}">
+
+      </app-card>
+      <div class="card-view-description">
+        <p><b>Nome:</b> {{cardSelect.Name}}</p>
+        <p><b>Descrição:</b> {{cardSelect.Description}}</p>
+        <p><b>Nivel:</b> {{cardSelect.Level}}</p>
+        <p><b>Vida:</b> {{cardSelect.HealthPoint}}</p>
+        <p><b>Ataque:</b> {{cardSelect.Attack}}</p>
+        <p><b>Magia:</b> {{cardSelect.Magic}}</p>
+        <p><b>Defesa:</b> {{cardSelect.Defense}}</p>
+        <p><b>Resistencia Mágica:</b> {{cardSelect.MagicResist}}</p>
+      </div>
+    </div>
+  </div>
+</div>

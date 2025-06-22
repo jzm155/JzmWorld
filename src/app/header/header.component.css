@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+}
+
+header {
+  background: linear-gradient(135deg, #6a0dad, #9b30ff);
+  color: white;
+  padding: 15px 30px;
+  position: relative;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: white;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      opacity: 0.85;
+    }
+
+.menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+  .menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    background: #6a0dad;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 20px;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+    nav.active {
+      display: flex;
+    }
+
+  .menu {
+    display: flex;
+  }
+}

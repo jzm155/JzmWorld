@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Carta</title>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Cadastro de Cartas</h2>
+    <form >
+      <!--<form (ngSubmit)="enviar()" #form="ngForm">-->
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" [(ngModel)]="card.Name" id="Name" name="Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea [(ngModel)]="card.Description" id="Description" name="Description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imagem">Imagem (URL)</label>
+          <input [(ngModel)]="card.Image" type="text" id="Image" name="Image" required>
+        </div>
+        <div class="form-group-compost">
+          <div class="form-group">
+            <label for="level">Level</label>
+            <input type="number" [(ngModel)]="card.Level" id="Level" name="Level" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hp">Health Point</label>
+            <input type="number" [(ngModel)]="card.HealthPoint" id="HealthPoint" name="HealthPoint" min="0" required>
+          </div>
+        </div>
+        <div class="form-group-compost">
+          <div class="form-group">
+            <label for="ataque">Ataque</label>
+            <input type="number" [(ngModel)]="card.Attack" id="Attack" name="Attack" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="defesa">Defesa</label>
+            <input type="number" [(ngModel)]="card.Defense" id="Defense" name="Defense" min="0" required>
+          </div>
+        </div>
+        <div class="form-group-compost">
+          <div class="form-group">
+            <label for="magia">Magia</label>
+            <input type="number" [(ngModel)]="card.Magic" id="Magic" name="Magic" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="resistencia">Resistência Mágica</label>
+            <input type="number" [(ngModel)]="card.MagicResist" id="MagicResist" name="MagicResist" min="0" required>
+          </div>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+</div>
+
+  <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+  </script>
+
+</body>
+</html>

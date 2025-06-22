@@ -1,0 +1,80 @@
+.card {
+  width: 200px;
+  height: 333px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: solid 5px black;
+  font-family: 'Arial Rounded MT';
+  color:white;
+  transform: rotate(calc(var(--i) * 0.75deg));
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  background: linear-gradient(135deg, #6a0dad, #9b30ff);
+}
+
+  .card:hover {
+    border-color: gold;
+    transform: rotate(0deg)
+  }
+
+  .card .card-title {
+    height: 10%;
+    display: flex;
+    margin: 3px;
+    justify-content: space-between;
+    width: 90%;
+    align-self: center;
+  }
+.card-image img {
+  width: 100%;
+  height: 100%;
+}
+.card .card-image {
+  height: 60%;
+  overflow: hidden;
+  width: 90%;
+  align-self: center;
+}
+.card .card-description {
+  height: 20%;
+  margin: 3px;
+  width: 90%;
+  align-self: center;
+  overflow-y:auto;
+}
+
+.card .card-power {
+  height: 10%;
+  display: flex;
+  flex-direction:column;
+  margin: 0px 0px 7px 0px;
+  width: 90%;
+  align-items: center;
+  align-self: center;
+}
+.card .card-status {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.card .card-health {
+  display: flex;
+  width: 100%;
+  background: linear-gradient( 120deg, #ff0000 25%, #cc0000 50%, #ff0000 75% );
+  background-size: 200% 100%;
+  animation: bloodFlow 2s linear infinite;
+  transition: width 0.3s ease;
+  justify-content: center;
+}
+@keyframes bloodFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
